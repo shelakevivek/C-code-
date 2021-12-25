@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace CollectionDemos
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            //List<Student> lst = new List<Student>();
+            //Student s1 = new Student() { rno = 1, name = "Ajay", science = 90, maths = 78, english = 67 };
+            //Student s2 = new Student() { rno = 3, name = "Amay", science = 20, maths = 28, english = 27 };
+            //Student s3 = new Student() { rno = 5, name = "Jay", science = 30, maths = 37, english = 47 };
+            //Student s4 = new Student() { rno = 2, name = "Sanjay", science = 56, maths = 72, english = 47 };
+            //Student s5 = new Student() { rno = 4, name = "Vijay", science = 50, maths = 71, english = 77 };
+            //lst.Add(s1);
+            //lst.Add(s2);
+            //lst.Add(s3);
+            //lst.Add(s4);
+            //lst.Add(s5);
+
+
+
+            List<Student> lst = new List<Student>();
+            lst.Add(new Student() { rno = 1, name = "Ajay", science = 90, maths = 78, english = 67 });
+            lst.Add(new Student() { rno = 3, name = "Amay", science = 20, maths = 28, english = 27 });
+            lst.Add(new Student() { rno = 5, name = "Jay", science = 30, maths = 37, english = 47 });
+            lst.Add(new Student() { rno = 2, name = "Sanjay", science = 56, maths = 72, english = 47 });
+            lst.Add(new Student() { rno = 4, name = "Vijay", science = 50, maths = 71, english = 77 });
+
+
+            //foreach(Student s in lst)
+            //{
+            //    Console.WriteLine(s.rno + " " + s.name + " " + s.english + " " + s.maths + " " + s.science);
+            //}
+
+            //var query = from l in lst where l.rno>2 orderby l.rno ascending select l;
+            //var query = from l in lst where l.name.ToLower().StartsWith("s") select l;
+            var query = from l in lst select new { sname = l.name, eng = l.english };
+            foreach (var  s in query)
+            {
+                Console.WriteLine(s.sname+" "+s.eng);
+                //Console.WriteLine(s.rno + " " + s.name + " " + s.english + " " + s.maths + " " + s.science);
+            }
+
+            Console.ReadLine();
+
+
+            
+
+        }
+    }
+}
